@@ -1,20 +1,9 @@
-import useStore from 'src/_libs/hooks/useStore'
-import createStore from '../createStore'
+import { IStateCounters } from '@store/counters/counters.type'
+import create from '../createStore'
+import { actions } from '@store/counters/counters.action'
 
-interface State {
-  count: number
-}
+const initialState: IStateCounters = { count: 0 }
 
-const initialState: State = { count: 0 }
+const useCounterStore = create(initialState, actions)
 
-const store = createStore(initialState)
-
-const increment = () => {
-  store.setState((state) => ({ ...state, count: state.count + 1 }))
-}
-
-export const useCountStore = () => {
-  return useStore(store, (state) => state.count)
-}
-
-export { store, increment }
+export default useCounterStore

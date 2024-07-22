@@ -14,8 +14,8 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["public/*"],
-      "@modules/*": ["src/modules/*"],
-      "@common/*": ["src/common/*"],
+      "@store/*": ["src/store/*"],
+      "@hooks/*": ["src/_libs/hooks/*"],
       "@libs/*": ["src/libs/*"],
       "@type/*": ["src/types/*"],
       "@assets/*": ["src/_libs/assets/*"],

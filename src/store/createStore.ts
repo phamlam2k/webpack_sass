@@ -1,3 +1,5 @@
+import { useSyncExternalStoreWithSelector } from 'use-sync-external-store/shim/with-selector'
+
 // createStore.ts
 type Listener = () => void
 
@@ -29,4 +31,27 @@ function createStore<T>(initialState: T): Store<T> {
   return { getState, setState, subscribe }
 }
 
-export default createStore
+function create<T, U>(
+  initialState: T,
+  actions: (set: (newState: T | ((state: T) => T)) => void) => Partial<U>
+) {
+  const store = createStore<T>(initialState)
+
+  const combinedState = {
+    ...initialState,
+    ...actions(store.setState)
+  }
+
+  store.setState(combinedState)
+
+  return (selector: (state: T) => U, equalityFn?: (a: U, b: U) => boolean) =>
+    useSyncExternalStoreWithSelector(
+      store.subscribe,
+      store.getState,
+      store.getState,
+      selector,
+      equalityFn
+    )
+}
+
+export default create
