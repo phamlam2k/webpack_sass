@@ -2,7 +2,7 @@ import { createRoutesFromElements, Route } from 'react-router-dom'
 
 import LoginPage from '@components/pages/Login'
 import DashboardPage from '@components/pages/Dashboard'
-import RootLayout from '@components/layout/RootLayout'
+import RootLayout from '@layout/RootLayout'
 
 const routesFromElement = createRoutesFromElements(
   <Route path='/' element={<RootLayout />}>

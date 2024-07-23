@@ -15,11 +15,11 @@
     "paths": {
       "~/*": ["public/*"],
       "@store/*": ["src/store/*"],
-      "@hooks/*": ["src/_libs/hooks/*"],
-      "@libs/*": ["src/libs/*"],
+      "@layout/*": ["src/_libs/layout/*"],
       "@type/*": ["src/types/*"],
-      "@assets/*": ["src/_libs/assets/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/_libs/hooks/*"],
+      "@assets/*": ["src/_libs/assets/*"]
     }
   },
   "files": ["src/index.tsx"],

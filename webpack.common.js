@@ -92,6 +92,7 @@ module.exports = {
       '@modules': path.resolve(__dirname, 'src/modules/'),
       '@hooks': path.resolve(__dirname, 'src/_libs/hooks/'),
       '@assets': path.resolve(__dirname, 'src/_libs/assets/'),
+      '@layout': path.resolve(__dirname, 'src/_libs/layout/'),
       '@components': path.resolve(__dirname, 'src/components/'),
       '~': path.resolve(__dirname, 'public'),
       '@mui/material': '@mui/material/legacy',
