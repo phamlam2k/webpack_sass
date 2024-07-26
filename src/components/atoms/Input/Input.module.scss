@@ -1,0 +1,51 @@
+@import '../../../_libs/assets/scss/variables';
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  input {
+    border: none;
+    flex: 1;
+    font-size: 16px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--icon {
+    display: flex;
+    align-items: center;
+
+    &__right {
+      padding-right: 10px;
+    }
+
+    &__left {
+      padding-left: 10px;
+    }
+  }
+
+  &--error {
+    border-color: $color-danger;
+  }
+
+  &--disabled {
+    background-color: #f9f9f9;
+    color: #ccc;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+}

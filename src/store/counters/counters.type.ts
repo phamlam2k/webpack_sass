@@ -2,11 +2,13 @@ export type IStateCountersProps = IStateCounters & IStateActions
 
 export interface IStateCounters {
   count: number
+  text: string
 }
 
 export interface IStateActions {
   increment: (value: number) => void
   decrement: () => void
+  changeText: (text: string) => void
   reset: () => void
 }
 

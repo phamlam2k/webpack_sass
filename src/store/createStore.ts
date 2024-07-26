@@ -1,6 +1,5 @@
 import { useSyncExternalStoreWithSelector } from 'use-sync-external-store/shim/with-selector'
 
-// createStore.ts
 type Listener = () => void
 
 interface Store<T> {
