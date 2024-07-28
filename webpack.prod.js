@@ -50,6 +50,33 @@ module.exports = merge(common, {
             return `vendors.${packageName.replace('@', '')}`
           }
         },
+        libComponents: {
+          test: /[\\/]_libs[\\/]/,
+          name: 'libComponents',
+          priority: 20,
+          reuseExistingChunk: true,
+          enforce: true
+        },
+        styles: {
+          name: 'styles',
+          test: /\.module\.scss$/,
+          chunks: 'all',
+          enforce: true
+        },
+        atomsComponents: {
+          test: /[\\/]components[\\/]atoms/,
+          name: 'atomicsComponents',
+          priority: 10,
+          reuseExistingChunk: true,
+          enforce: true
+        },
+        moleculesComponents: {
+          test: /[\\/]components[\\/]molecules/,
+          name: 'moleculesComponents',
+          priority: 10,
+          reuseExistingChunk: true,
+          enforce: true
+        },
         default: {
           minChunks: 2,
           priority: -20,
@@ -64,6 +91,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.s[ac]ss$/i,
+        exclude: /\.module\.s[ac]ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {

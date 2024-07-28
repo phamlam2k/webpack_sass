@@ -5,7 +5,7 @@ import styles from './Modal.module.scss'
 import { CloseIcon } from '@assets/icons/icons'
 import useClickOutside from '@hooks/useClickOutside'
 
-interface IModalProps {
+type IModalProps = {
   isOpen: boolean
   children: React.ReactNode
 

@@ -1,6 +1,7 @@
 import Button from '@components/atoms/Button/Button'
 import Input from '@components/atoms/Input/Input'
 import Modal from '@components/atoms/Modal/Modal'
+import Typography from '@components/atoms/Typography/Typography'
 import DashboardOrganisms from '@components/organisms/Dashboard'
 import useCounterStore from '@store/counters/counters.store'
 import { IStateCountersProps } from '@store/counters/counters.type'
@@ -29,6 +30,7 @@ const DashboardPage = () => {
           <div>alooooooo</div>
         </Modal>
       )}
+      <Typography variant='body1'>Title</Typography>
     </div>
   )
 }
