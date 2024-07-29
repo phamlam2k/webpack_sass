@@ -1,0 +1,119 @@
+@import '../../../_libs/assets/scss/variables';
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px;
+}
+
+.grid-item {
+  padding: 8px;
+}
+
+/* xs breakpoints */
+.grid-item-xs-12 {
+  flex-basis: 100%;
+}
+.grid-item-xs-6 {
+  flex-basis: 50%;
+}
+.grid-item-xs-4 {
+  flex-basis: 33.33%;
+}
+.grid-item-xs-3 {
+  flex-basis: 25%;
+}
+.grid-item-xs-2 {
+  flex-basis: 16.67%;
+}
+.grid-item-xs-1 {
+  flex-basis: 8.33%;
+}
+
+/* sm breakpoints */
+@media (min-width: $media-screen-sm) {
+  .grid-item-sm-12 {
+    flex-basis: 100%;
+  }
+  .grid-item-sm-6 {
+    flex-basis: 50%;
+  }
+  .grid-item-sm-4 {
+    flex-basis: 33.33%;
+  }
+  .grid-item-sm-3 {
+    flex-basis: 25%;
+  }
+  .grid-item-sm-2 {
+    flex-basis: 16.67%;
+  }
+  .grid-item-sm-1 {
+    flex-basis: 8.33%;
+  }
+}
+
+/* md breakpoints */
+@media (min-width: $media-screen-md) {
+  .grid-item-md-12 {
+    flex-basis: 100%;
+  }
+  .grid-item-md-6 {
+    flex-basis: 50%;
+  }
+  .grid-item-md-4 {
+    flex-basis: 33.33%;
+  }
+  .grid-item-md-3 {
+    flex-basis: 25%;
+  }
+  .grid-item-md-2 {
+    flex-basis: 16.67%;
+  }
+  .grid-item-md-1 {
+    flex-basis: 8.33%;
+  }
+}
+
+/* lg breakpoints */
+@media (min-width: $media-screen-lg) {
+  .grid-item-lg-12 {
+    flex-basis: 100%;
+  }
+  .grid-item-lg-6 {
+    flex-basis: 50%;
+  }
+  .grid-item-lg-4 {
+    flex-basis: 33.33%;
+  }
+  .grid-item-lg-3 {
+    flex-basis: 25%;
+  }
+  .grid-item-lg-2 {
+    flex-basis: 16.67%;
+  }
+  .grid-item-lg-1 {
+    flex-basis: 8.33%;
+  }
+}
+
+/* xl breakpoints */
+@media (min-width: $media-screen-xl) {
+  .grid-item-xl-12 {
+    flex-basis: 100%;
+  }
+  .grid-item-xl-6 {
+    flex-basis: 50%;
+  }
+  .grid-item-xl-4 {
+    flex-basis: 33.33%;
+  }
+  .grid-item-xl-3 {
+    flex-basis: 25%;
+  }
+  .grid-item-xl-2 {
+    flex-basis: 16.67%;
+  }
+  .grid-item-xl-1 {
+    flex-basis: 8.33%;
+  }
+}

@@ -1,4 +1,5 @@
 import Button from '@components/atoms/Button/Button'
+import Grid from '@components/atoms/Grid/Grid'
 import Input from '@components/atoms/Input/Input'
 import Modal from '@components/atoms/Modal/Modal'
 import Typography from '@components/atoms/Typography/Typography'
@@ -31,6 +32,14 @@ const DashboardPage = () => {
         </Modal>
       )}
       <Typography variant='body1'>Title</Typography>
+      <Grid container>
+        <Grid item xs={6}>
+          <Typography variant='h1'>Title</Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <Typography variant='h1'>Title</Typography>
+        </Grid>
+      </Grid>
     </div>
   )
 }
