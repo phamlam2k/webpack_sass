@@ -1,11 +1,11 @@
-import Button from './Button'
+import Input from './Input'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Atomics/Button',
-  component: Button,
+  title: 'Atomics/Input',
+  component: Input,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered'
@@ -14,10 +14,6 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    size: {
-      control: 'radio',
-      options: ['small', 'large']
-    },
     startIcon: {
       control: 'text'
     },
@@ -27,32 +23,26 @@ const meta = {
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() }
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof Input>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const InputText: Story = {
   args: {
-    variant: 'primary',
-    children: 'Button',
-    size: 'small'
+    type: 'text'
   }
 }
 
-export const Secondary: Story = {
+export const InputNumber: Story = {
   args: {
-    variant: 'secondary',
-    children: 'Button',
-    size: 'small'
+    type: 'number'
   }
 }
 
-export const Border: Story = {
+export const InputPassword: Story = {
   args: {
-    variant: 'border',
-    children: 'Button',
-    size: 'small'
+    type: 'password'
   }
 }

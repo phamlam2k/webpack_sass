@@ -10,7 +10,7 @@ interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   isError?: boolean
 }
 
-const Input = function (props: IInputProps, ref: LegacyRef<HTMLInputElement>) {
+const Input = (props: IInputProps, ref: LegacyRef<HTMLInputElement>) => {
   const {
     startIcon,
     endIcon,
@@ -23,6 +23,9 @@ const Input = function (props: IInputProps, ref: LegacyRef<HTMLInputElement>) {
 
   const [isErrorState, setIsErrorState] = useState<boolean>(isError)
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false)
+
+  const typeInput =
+    type === 'password' ? (isShowPassword ? 'text' : type) : type
 
   const inputClassName = clsx(
     styles.input,
@@ -54,7 +57,7 @@ const Input = function (props: IInputProps, ref: LegacyRef<HTMLInputElement>) {
       {startIcon && (
         <span className={inputIconRightClassName}>{startIcon}</span>
       )}
-      <input {...rest} type={isShowPassword ? 'password' : 'text'} ref={ref} />
+      <input {...rest} type={typeInput} disabled={disabled} ref={ref} />
       {endIcon && <span className={inputIconLeftClassName}>{endIcon}</span>}
       {type === 'password' && (
         <span className={inputIconLeftClassName} onClick={handleChangePassword}>
