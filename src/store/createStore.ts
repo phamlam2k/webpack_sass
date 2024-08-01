@@ -1,12 +1,5 @@
+import { Listener, Store } from '@type/store.type'
 import { useSyncExternalStoreWithSelector } from 'use-sync-external-store/shim/with-selector'
-
-type Listener = () => void
-
-interface Store<T> {
-  getState: () => T
-  setState: (newState: T | ((state: T) => T)) => void
-  subscribe: (listener: Listener) => () => void
-}
 
 function createStore<T>(initialState: T): Store<T> {
   let state: T = initialState

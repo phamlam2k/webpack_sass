@@ -1,6 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-webpack5'
 import path from 'path'
-import { ProvidePlugin, DefinePlugin } from 'webpack'
+import { ProvidePlugin } from 'webpack'
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -81,4 +81,5 @@ const config: StorybookConfig = {
     return config
   }
 }
+
 export default config
