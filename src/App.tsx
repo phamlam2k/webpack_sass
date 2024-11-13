@@ -1,12 +1,10 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import routesFromElement from './routes'
+import { RouterProvider } from 'react-router-dom'
 
 import '@assets/style.scss'
-
-const routes = createBrowserRouter(routesFromElement)
+import routesFromElement from './routes'
 
 const App = () => {
-  return <RouterProvider router={routes} />
+  return <RouterProvider router={routesFromElement} />
 }
 
 export default App

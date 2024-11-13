@@ -1,15 +1,33 @@
-import { createRoutesFromElements, Route } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 
-import LoginPage from '@components/pages/Login'
-import DashboardPage from '@components/pages/Dashboard'
 import RootLayout from '@layout/RootLayout'
-
-const routesFromElement = createRoutesFromElements(
-  <Route path='/' element={<RootLayout />}>
-    <Route path='' element={<DashboardPage />} />
-
-    <Route path='login' element={<LoginPage />} />
-  </Route>
+import { lazy } from 'react'
+const LoginLazyPage = lazy(
+  () => import(/* webpackChunkName: "login" */ '@components/pages/Login')
 )
+
+const DashboardLazyPage = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "dashboard" */ '@components/pages/Dashboard/index'
+    )
+)
+
+const routesFromElement = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      {
+        path: '',
+        element: <DashboardLazyPage />
+      },
+      {
+        path: 'login',
+        element: <LoginLazyPage />
+      }
+    ]
+  }
+])
 
 export default routesFromElement

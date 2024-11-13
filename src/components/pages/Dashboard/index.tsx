@@ -12,7 +12,7 @@ const DashboardPage = () => {
   const { count, increment, text } = useCounterStore(
     (state: IStateCountersProps) => state
   )
-  const [isModalStatus, setIsModalStatus] = useState(false)
+  const [isModalStatus, setIsModalStatus] = useState<boolean>(false)
 
   const handleChangeModalStatus = () => {
     setIsModalStatus((prev) => !prev)

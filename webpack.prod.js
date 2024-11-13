@@ -14,9 +14,15 @@ module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    },
+    runtimeChunk: 'single'
   },
   optimization: {
     minimize: true,
